@@ -1,0 +1,307 @@
+/* Universal Selector for all styles */
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+    box-sizing: border-box;
+    }
+    
+
+
+ /* Styling the background for the quiz game */
+      /* styling the whole body for bg */
+      body {
+        margin: 0;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: black;
+        
+      }
+      /* styling the container for the planets */
+      .container {
+        font-size: 10px;
+        width: 40em;
+        height: 40em;
+        position: relative;
+      }
+      /* styling the sun */
+      .sun {
+        position: absolute;
+        top: 15em;
+        left: 15em;
+        width: 10em;
+        height: 10em;
+        background-color: yellow;
+        border-radius: 50%;
+        box-shadow: 0 0 3em white;
+      }
+
+      /* styling the general properties of the earth and moon */
+      .earth,.moon {
+        position: absolute;
+        border-style: solid;
+        border-color: white transparent transparent transparent;
+        border-width: 0.1em 0.1em 0 0;
+        border-radius: 50%;
+      }
+
+      /* animating the earth */
+      .earth {
+        top: 5em;
+        left: 5em;
+        width: 30em;
+        height: 30em;
+        animation: orbit 36.5s linear infinite;
+      }
+
+      /* animating the moon  */
+      .moon {
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 8em;
+        height: 8em;
+        animation: orbit 2.7s linear infinite;
+      }
+      /* applying before properties to the earth and moon */
+
+      .earth::before,
+      .moon::before {
+        content: '';
+        position: absolute;
+        border-radius: 50%;
+      }
+
+      .earth::before {
+        top: 2.8em;
+        right: 2.8em;
+        width: 3em;
+        height: 3em;
+        background-color: aqua;
+      }
+      .moon::before {
+        top: 0.8em;
+        right: 0.2em;
+        width: 1.2em;
+        height: 1.2em;
+        background-color: silver;
+      }
+      /* Applying animations for earth and moon */
+      @keyframes orbit {
+        to {
+          transform: rotate(360deg);
+        }
+      }
+
+      /*Animate the container to transition in as the page loads*/
+      .space {
+        animation: transitionIn 1s;
+      }
+
+      @keyframes transitionIn{
+        from{
+           opacity: 0;
+           transform: rotateX(-10deg); 
+           transform: translateX(-100%);
+        }
+        to{
+            opacity: 1;
+           transform: rotateX(0); 
+           transform: translateX(0);
+
+        }
+      }
+
+      /* Applying styles for the containers of the quiz game */
+
+      .audio-icon{
+     
+        position: static;
+        width: 49px;
+      }
+
+      .quiz {
+        background-color: rgba(red, green, blue, 0);
+        width: 600px;
+        align-items: center;
+        margin: 30px auto 0;
+        border-radius: 10px;
+        padding: 30px;
+        
+
+
+      }
+
+      .title{
+        font-weight: 1000;
+        font-size: 60px;
+        color:#fff;
+       
+        text-align: justify;
+        
+        
+      }
+
+      /*Adding styles to buttons in the quiz game*/
+      .starting{
+        border-radius: 10%;
+        transition: 0.5s;
+        margin-right: 10px;
+        margin-bottom: 10px;
+        cursor: pointer;
+      }
+
+      .starting:hover{
+        transform: scale(1.1);
+        color: black;
+    
+      }
+
+      /*adding styles to p in choose quiz and other paragraph elements*/
+      .choose-p{
+        font-size: 30px;
+        text-align: center;
+        color: white;
+      }
+
+      .reminder{
+        display: block;
+        font-size: 15px;
+        text-align: center;
+        color: white;
+      }
+
+      /*adding styles for h1 when answering any quiz*/
+
+      #multiple-question{
+        font-size: 40px;
+        color: white;
+      }
+      
+      /*styling the multiple answers section of the quiz game*/
+      #answer-button{
+        margin-top: 10px;
+        display: flex;
+        flex-wrap: nowrap;
+        justify-content: space-between;
+      }
+      #next-btn{
+        background: #001e4d;
+        color: white;
+        font-weight: 500;
+        width: 150px;
+        border: 0;
+        padding: 10px;
+        margin: 20px auto 0;
+        border-radius: 4px;
+        cursor: pointer;
+        display: none;
+        transition: 0.5s;
+      }
+
+      #next-btn:hover{
+        transform: scale(1.1);
+      }
+
+      .btn{
+        background: lightskyblue;
+        color: white;
+        font-weight: 500;
+        width: 100%;
+        border: 1px solid lightblue;
+        padding: 10px;
+        margin: 10px 0;
+        margin-left: 10px;
+        text-align: center;
+        border-radius: 4px;
+        cursor: pointer;
+        transition: all 0.3s;   
+      }
+    /* disables the choices after choosing */
+      .btn:hover:not([disabled]){
+        transform: scale(1.1);
+
+      }
+      .btn:disabled{
+        cursor: no-drop;
+      }
+
+      /* adds color for correct and incorrect answers */
+      .correct{
+        background:#9aeabc;
+
+      }
+      .incorrect{
+        background: red;
+      }
+
+      /*Style the timer*/
+      .time-text{
+        text-align: right;
+        color: white;
+        font-size: 20px;
+      }
+
+      .timer-sec{
+        text-align: right;
+        color: white;
+        font-size: 30px;
+      }
+
+    /* styling the input box for fill in the blanks */
+    .intext1{
+        align-items: center;
+        text-align: center;
+        font-weight: 1000;
+        color: black;
+        font-size: 30px;
+        background: white;
+    }
+
+    .fill-in-btn{
+        border-radius: 10px;
+        margin-top: 10px;
+        color: white;
+        background-color: green;
+        font-size: 20px;
+        transition: 0.5s;
+    }
+    .fill-in-btn:hover{
+            transform: scale(1.2);
+            color: red;
+            background-color: blue;
+
+
+    }
+
+
+    .submit-ans{
+        display: flex;
+        justify-content: center;
+     
+    }
+
+    #solar-system-planets{
+        display: grid;
+        justify-content: space-evenly;
+        align-items: center;
+    }
+    .planet{
+        margin-top: 10px;
+        font-size: 20px;
+        text-align: center;
+    }
+
+    #resetbtn{
+        margin-left:10px;
+        display: none;
+    }
+
+    
+
+
+
+     
+   
